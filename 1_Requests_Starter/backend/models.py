@@ -5,7 +5,7 @@ import json
 
 database_name = "bookshelf"
 database_path = "postgresql://{}:{}@{}/{}".format(
-    "student", "student", "localhost:5432", database_name
+    "postgres", "12345", "localhost:5432", database_name
 )
 
 db = SQLAlchemy()
@@ -19,6 +19,7 @@ setup_db(app)
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.app_context().push()
     db.app = app
     db.init_app(app)
     db.create_all()

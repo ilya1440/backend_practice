@@ -31,7 +31,7 @@ CREATE TABLE public.books (
     rating integer
 );
 
-ALTER TABLE public.books OWNER TO student;
+ALTER TABLE public.books OWNER TO postgres;
 
 --
 -- Name: books_id_seq; Type: SEQUENCE; Schema: public; Owner: student/postgres
@@ -47,7 +47,7 @@ CREATE SEQUENCE public.books_id_seq
 
 
 
-ALTER TABLE public.books_id_seq OWNER TO student;
+ALTER TABLE public.books_id_seq OWNER TO postgres;
 
 --
 -- Name: books_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: student/postgres
